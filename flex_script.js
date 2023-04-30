@@ -27,7 +27,7 @@ function change_align(value) {
             align_prev = example.style.alignItems;
             example.style.alignItems = value;
         }
-        else if (justify_prev.length !== 0) {
+        else if (align_prev.length !== 0) {
             example.style.alignItems = align_prev;
         }
 
