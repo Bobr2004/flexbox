@@ -70,6 +70,7 @@ html {
     cursor: pointer;
     background: #9b59b6;
     text-shadow: 0 0 2px #ecf0f1;
+    user-select: none;
 }
 
 .button:hover {
