@@ -1,6 +1,8 @@
 let example = document.querySelector(".example");
 const justify_b = document.querySelectorAll(".justify .button");
+let justify_prev = "";
 const align_b = document.querySelectorAll(".align .button");
+let align_prev = "";
 const flex_in = document.querySelectorAll(".inputt");
 const direct_b = document.querySelectorAll(".direction .button")
 
@@ -8,13 +10,27 @@ const elements = document.querySelectorAll(".example .element")
 
 function change_justify(value) {
     return function () {
-        example.style.justifyContent = value;
+        if (example.style.justifyContent !== value) {
+            justify_prev = example.style.justifyContent;
+            example.style.justifyContent = value;
+        }
+        else if (justify_prev.length !== 0) {
+            example.style.justifyContent = justify_prev;
+        }
+
     }
 }
 
 function change_align(value) {
     return function () {
-        example.style.alignItems = value
+        if (example.style.alignItems !== value) {
+            align_prev = example.style.alignItems;
+            example.style.alignItems = value;
+        }
+        else if (justify_prev.length !== 0) {
+            example.style.alignItems = align_prev;
+        }
+
     }
 }
 
